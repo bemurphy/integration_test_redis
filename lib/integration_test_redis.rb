@@ -37,9 +37,10 @@ class IntegrationTestRedis
 
   def stop
     pid = File.read(PIDFILE).to_i
+    return false unless pid > 0
+
     begin
-      Process.getpgid(pid)
-      system("kill -QUIT #{pid}")
+      !! Process.kill("QUIT", pid)
     rescue Errno::ESRCH
       false
     end
