@@ -6,7 +6,7 @@ Provide a non-persistent [Redis](http://redis.io/) server for use in integration
 Why?
 ----
 
-Many redis test solutions work by completely mocking out the Redis client
+Many Redis test solutions work by completely mocking out the Redis client
 interface.  This is sometimes a good approach, especially if you want to
 write pure unit tests.  However, there are times you want to integrate
 with Redis safely for testing purposes.
